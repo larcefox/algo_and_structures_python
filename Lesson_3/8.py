@@ -4,3 +4,23 @@
 записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
 """
+from random import choices
+
+# Была мысль сделать через numpy.random.random_integers()
+# но для добавления значений в многомерный np массив нужно соблюдать размерность
+# а это значит, что необходимо сразу вычислить все последние элементы строк.
+# Показалось так проще.
+
+def matrix_append():
+    sec = range(-100, 100)
+    matrix = [choices(sec, k=3),
+              choices(sec, k=3),
+              choices(sec, k=3),
+              choices(sec, k=3),
+              choices(sec, k=3)]
+    _ = [i.append(sum(i)) for i in matrix]
+    return matrix
+
+
+print(matrix_append())
+

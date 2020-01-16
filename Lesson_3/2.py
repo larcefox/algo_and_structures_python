@@ -5,3 +5,14 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+
+LST = [8, 3, 15, 6, 4, 2, ]
+
+
+def even_index(lst):
+    new_lst = []
+    [not (i % 2) and new_lst.append(lst.index(i)) for i in lst]
+    return new_lst
+
+
+print(even_index(LST))
